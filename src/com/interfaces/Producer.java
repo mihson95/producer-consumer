@@ -1,7 +1,8 @@
 package com.interfaces;
 
 public interface Producer {
-	
-	public void register(Consumer consumer);
-	public void deregister(Consumer consumer);
+
+	boolean register(Consumer consumer);
+	boolean deregister(Consumer consumer);
+	int sendMessageToConsumers(String message);
 }

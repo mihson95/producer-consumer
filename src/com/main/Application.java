@@ -11,14 +11,13 @@ public class Application {
 		ProducerImpl producerImpl = new ProducerImpl();
 		producerImpl.register(consumerImpl);
 		producerImpl.register(consumerImpl2);
-		producerImpl.sendMessagesToConsumers();
+		producerImpl.sendMessageToConsumers("Event 1");
 		producerImpl.deregister(consumerImpl2);
 		ConsumerImpl consumerImpl3 = new ConsumerImpl(3);
 		producerImpl.register(consumerImpl3);
-		producerImpl.sendMessagesToConsumers();
+		producerImpl.sendMessageToConsumers("Event 2");
 		producerImpl.deregister(consumerImpl);
 		producerImpl.deregister(consumerImpl3);
-		producerImpl.sendMessagesToConsumers();
+		producerImpl.sendMessageToConsumers("No active consumers");
 	}
-
 }
